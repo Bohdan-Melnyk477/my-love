@@ -1,0 +1,89 @@
+
+/* Скидання стандартних відступів */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Фонове зображення */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -5px;
+  background: url("img/photo2.jpg") center / cover no-repeat;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+/* Кнопка */
+button {
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #e75480;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Ефект при наведенні */
+button:hover {
+  background-color: #d63d6d;
+  transform: scale(1.05);
+}
+
+/* Планшети */
+@media (max-width: 900px) {
+  button {
+    padding: 13px 28px;
+    font-size: 17px;
+  }
+}
+
+/* Телефони */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  button {
+    width: auto;
+    max-width: 100%;
+    padding: 14px 26px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  /* На телефоні прибираємо ефект збільшення */
+  button:hover {
+    transform: none;
+  }
+}
+
+/* Маленькі телефони */
+@media (max-width: 360px) {
+  button {
+    padding: 12px 22px;
+    font-size: 15px;
+  }
+}

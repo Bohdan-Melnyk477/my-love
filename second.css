@@ -1,0 +1,194 @@
+
+/* Загальні налаштування */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  position: relative;
+  padding: 30px 20px;
+  color: white;
+}
+
+/* Фонове фото з блюром */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -5px;
+  background: url("img/photo2.jpg") center / cover no-repeat;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+/* Основний контейнер */
+main {
+  width: 100%;
+  max-width: 850px;
+  margin: 30px auto;
+}
+
+/* Блок листа */
+.letter {
+  width: 100%;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.4;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Фотоальбом */
+.photo-album {
+  margin-top: 35px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.photo-album h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+/* Галерея */
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 550px;
+  height: 450px;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.gallery button {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: #e75480;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.gallery button:hover {
+  background: #d63d6d;
+  transform: scale(1.08);
+}
+
+/* Планшети */
+@media (max-width: 900px) {
+  main {
+    max-width: 700px;
+  }
+
+  .letter {
+    padding: 30px;
+  }
+
+  .gallery img {
+    height: 380px;
+  }
+}
+
+/* Телефони */
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+
+  main {
+    margin: 12px auto;
+  }
+
+  .letter {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 22px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .photo-album {
+    margin-top: 20px;
+    padding: 22px 10px;
+    border-radius: 16px;
+  }
+
+  .photo-album h2 {
+    font-size: 23px;
+  }
+
+  .gallery {
+    gap: 7px;
+  }
+
+  .gallery img {
+    height: 280px;
+    min-width: 0;
+  }
+
+  .gallery button {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+}
+
+/* Дуже маленькі телефони */
+@media (max-width: 360px) {
+  .letter {
+    padding: 20px 14px;
+  }
+
+  h1 {
+    font-size: 21px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .gallery img {
+    height: 230px;
+  }
+}
