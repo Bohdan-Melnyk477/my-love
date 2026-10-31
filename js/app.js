@@ -35,7 +35,7 @@
   // =====================================
 
   const photos = [
-    "img/photo_2025-12-14_23-32-56.jpg",
+    "img/photo1.jpg",
     "img/photo2.jpg",
     "img/photo3.jpg",
     "img/photo4.jpg"
